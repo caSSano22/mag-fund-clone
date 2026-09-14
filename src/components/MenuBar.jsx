@@ -64,7 +64,7 @@ export const MenuBar = () => {
             </button>
 
             {appleMenuOpen && (
-              <div className="menu-drop absolute left-0 top-full mt-1 w-52 bg-plat-100 border border-plat-500 shadow-lg z-50 text-[12px] py-1">
+              <div className="menu-drop absolute left-0 top-full mt-1 w-56 bg-plat-100 border border-plat-500 shadow-lg z-50 text-[12px] py-1">
                 <div className="px-3 py-1 font-bold border-b border-plat-300 text-plat-800">
                   Mutual Assets Group v1.0
                 </div>
@@ -104,6 +104,16 @@ export const MenuBar = () => {
                   <span className="text-[10px] text-plat-500">/whitelist</span>
                 </button>
                 <div className="border-t border-plat-300 my-1" />
+                <a
+                  href="https://x.com/magfund_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setAppleMenuOpen(false)}
+                  className="menu-row w-full text-left px-3 py-1.5 hover:bg-plat-300 flex items-center justify-between font-bold text-plat-900"
+                >
+                  <span>X / Twitter</span>
+                  <span className="text-[10px] text-plat-500">@magfund_</span>
+                </a>
                 <button
                   onClick={() => { navigate('/brand'); setAppleMenuOpen(false); }}
                   className="menu-row w-full text-left px-3 py-1.5 hover:bg-plat-300"
@@ -168,8 +178,22 @@ export const MenuBar = () => {
           </Link>
         </div>
 
-        {/* Right Side: Controls */}
+        {/* Right Side: Controls & X Link */}
         <div className="flex items-center gap-2">
+          {/* X / Twitter Link */}
+          <a
+            href="https://x.com/magfund_"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-sm text-[11px] px-2 py-0.5 flex items-center gap-1 font-bold"
+            title="Follow @magfund_ on X"
+          >
+            <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            <span className="hidden sm:inline">@magfund_</span>
+          </a>
+
           {/* Sound Toggle */}
           <button
             onClick={toggleSound}
@@ -195,7 +219,7 @@ export const MenuBar = () => {
             {appearanceOpen && (
               <div className="menu-drop absolute right-0 top-full mt-1 w-56 bg-plat-100 border border-plat-500 shadow-xl z-50 text-[11px] p-2 space-y-3">
                 <div>
-                  <div className="font-bold border-b border-plat-300 pb-1 mb-1 text.plat-800">Theme</div>
+                  <div className="font-bold border-b border-plat-300 pb-1 mb-1 text-plat-800">Theme</div>
                   <div className="space-y-1">
                     {THEMES.map(t => (
                       <label key={t.id} className="flex items-center gap-2 cursor-pointer hover:bg-plat-200 p-1 rounded">
